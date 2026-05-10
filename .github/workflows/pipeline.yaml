@@ -1,0 +1,12 @@
+name: Deployment pipeline
+
+on:
+    push:
+        branches:
+            - main
+jobs:
+    deploy:
+        runs-on: ubunutu-latest
+        steps:
+            - name: Trigger deployment
+              run: curl $ {{ secrets.RENDER_DEPLOY_HOOK }}
